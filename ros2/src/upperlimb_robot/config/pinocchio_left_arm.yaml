@@ -1,0 +1,46 @@
+robot_control_node:
+  ros__parameters:
+    # ===================== 线程频率 =====================
+    state_hz: 200
+    control_hz: 100
+    publish_divider: 10
+    status_read_divider: 20
+
+    # ===================== Pinocchio 左臂控制器开关 =====================
+    enable_pinocchio_left_arm: true
+
+    # 为空时，代码会默认加载：
+    # share/upperlimb_robot/urdf/left_arm.urdf
+    pinocchio_urdf_path: ""
+
+    # ===================== 传感器使用设置 =====================
+    use_upper_arm_sensor: true
+    use_hand_sensor: true
+
+    # 一阶低通滤波系数
+    wrench_lpf_alpha: 0.2
+
+    # 重力补偿比例
+    gravity_scale: 1.0
+
+    # 两个传感器的整体缩放
+    upper_sensor_scale: 1.0
+    hand_sensor_scale: 1.0
+
+    # 六维力死区：[Fx, Fy, Fz, Mx, My, Mz]
+    upper_deadzone: [1.0, 1.0, 1.0, 0.08, 0.08, 0.08]
+    hand_deadzone: [1.0, 1.0, 1.0, 0.08, 0.08, 0.08]
+
+    # 方向修正。
+    # 若实际方向与预期不符，只需要改这里的正负号即可。
+    upper_force_sign: [1.0, 1.0, 1.0]
+    upper_torque_sign: [1.0, 1.0, 1.0]
+    hand_force_sign: [1.0, 1.0, 1.0]
+    hand_torque_sign: [1.0, 1.0, 1.0]
+
+    # 零力模式附加关节阻尼，对应 joint4~joint7
+    zero_force_damping: [0.8, 0.8, 0.6, 0.5]
+
+    # joint4~joint7 扭矩限幅，单位 Nm
+    # 当前 4 自由度模型默认只控制这 4 个关节
+    torque_limit: [12.0, 12.0, 10.0, 8.0]

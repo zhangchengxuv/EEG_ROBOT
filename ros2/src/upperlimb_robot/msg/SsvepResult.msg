@@ -1,0 +1,12 @@
+builtin_interfaces/Time received_at
+string raw
+# 0=接受，1=格式错误，2=重复序号，3=旧序号，4=超长帧，5=串口异常，6=忙碌丢弃，7=串口已连接，8=串口未配置
+uint8 status
+string detail
+uint64 sequence
+string source
+uint8 target
+float64 frequency_hz
+bool serial_connected
+string serial_device
+int32 baud_rate

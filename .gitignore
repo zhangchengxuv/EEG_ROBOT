@@ -1,0 +1,16 @@
+# ROS 2 / colcon generated workspaces
+**/build/
+**/install/
+**/log/
+
+# CMake and Qt generated files
+CMakeCache.txt
+CMakeFiles/
+*_autogen/
+*.user
+
+# Editor and operating-system files
+.vscode/
+.idea/
+*~
+.DS_Store

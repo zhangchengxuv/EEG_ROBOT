@@ -1,0 +1,10 @@
+builtin_interfaces/Time stamp
+# 0=ZERO_FORCE,1=READY,2=SWITCHING,3=MOVING_OUT,4=MOVING_BACK,5=SETTLING,6=RESTORING,7=FAULT
+uint8 phase
+uint8 target
+bool ready_for_command
+bool debug_mode
+string detail
+float64[] q0_deg
+float64[] target_deg
+float64[] actual_deg
